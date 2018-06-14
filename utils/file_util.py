@@ -25,10 +25,15 @@ def make_dirs(path):
         pass
 
 
-def save_dict_as_json_file(directory_path, filename, dict_data):
-    file_path = os.path.join(directory_path, filename)
+def save_dict_as_json_file(file_path, dict_data):
     with open(file_path, "w") as outfile:
         json.dump(dict_data, outfile)
+
+
+def read_dict_from_json_file(file_path):
+    with open(file_path, "r") as input_file:
+        data = json.load(input_file)
+        return data
 
 
 def remove_file(file_path):
